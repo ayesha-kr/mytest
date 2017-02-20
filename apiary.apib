@@ -1,42 +1,19 @@
 FORMAT: 1A
-HOST: http://mytestapi.apiblueprint.org/
+HOST: http://polls.apiblueprint.org/
 
-# mytestapi
+# mynewtestapi
 
 Polls is a simple API allowing consumers to view polls and vote in them.
 
-## mytest [/mytest]
+## book collection [/books]
 
-### List All test [GET]
+### List All books [GET]
 
-+ Response 200 (content-type: application/json;charset=utf-8ntextn)
-
-        [
-            {
-                test_1 : "aaa", 
-                test_2 : "bbb"
-             },
-             {
-                test_1 : "ccc", 
-                test_2 : "ddd"
-             },
-                          {
-                test_1 : "eee", 
-                test_2 : "fff"
-             },
-        ]
-
-## mytest [/mytest/{id}]
-
-### Get single test Data [GET]
-+ Parameters
-    + id: 1 (number, required) - ID provided
-    
-+ Response 200 (content-type: application/json;charset=utf-8)
++ Response 200 (application/json)
 
         [
-            {
-                test_1 : "aaa", 
-                test_2 : "bbb"
-             }
+           {
+              book_id : 123,
+              book_name : 'worldwar'
+           }
         ]
