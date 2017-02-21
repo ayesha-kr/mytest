@@ -5,7 +5,8 @@ app.get('/books/122', function(req, res) {
            {
               "book_pages" : 123,
               "book_name" : "worldwar",
-              "book_shop" : "shop_no_1"
+              "book_shop" : "shop_no_1",
+              "book_color" : "black"
            };
    res.setHeader('content-Type', 'application/json');
    console.log(reply, '@@@');
