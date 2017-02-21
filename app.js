@@ -4,7 +4,8 @@ app.get('/books/122', function(req, res) {
 	var reply =
            {
               "book_pages" : 123,
-              "book_name" : "worldwar"
+              "book_name" : "worldwar",
+              "book_shop" : "shop_no_1"
            };
    res.setHeader('content-Type', 'application/json');
    console.log(reply, '@@@');
