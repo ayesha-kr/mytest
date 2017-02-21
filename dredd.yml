@@ -6,7 +6,7 @@ dry-run: null
 hookfiles: null
 language: nodejs
 sandbox: false
-server: null
+server: node app.js
 server-wait: 3
 init: false
 names: false
