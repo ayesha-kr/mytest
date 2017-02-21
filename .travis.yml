@@ -1,3 +1,10 @@
 language: node_js
 node_js:
   - "4.4.7"
+before_install:
+  - npm install -g dredd@x.x.x
+install: 
+  - npm install
+after_success:
+    - dredd
+

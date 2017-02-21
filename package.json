@@ -1,0 +1,23 @@
+{
+  "name": "mytest",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ayesha-kr/mytest.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ayesha-kr/mytest/issues"
+  },
+  "homepage": "https://github.com/ayesha-kr/mytest#readme",
+  "dependencies": {
+    "dredd": "^2.2.5",
+    "express": "^4.14.1"
+  }
+}
