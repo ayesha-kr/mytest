@@ -5,15 +5,21 @@ HOST: http://polls.apiblueprint.org/
 
 Polls is a simple API allowing consumers to view polls and vote in them.
 
-## book collection [/books]
+## book [/books/{book_id}]
+A book contains information about book
 
-### List All books [GET]
++ Parameters
+   + book_id : 122 (number, required)
+      ID of the desired book
+
++ Attributes (object)
+    + book_pages : 100 (number)
+    + book_name : worldwar (string)    
+    
+
+### Get a book [GET]
+
+
 
 + Response 200 (application/json; charset=utf-8)
-
-        [
-           {
-              "book_id" : 123,
-              "book_name" : "worldwar"
-           }
-        ]
+   + Attributes (book)
