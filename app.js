@@ -22,7 +22,7 @@ app.get('/books', function(req, res) {
               "book_shop" : "shop_no_1",
               "book_color" : "black"
            }
-          ];
+         ];
    res.setHeader('content-Type', 'application/json');
    console.log(reply, '@@@');
    res.status(200).send(JSON.stringify(reply));
