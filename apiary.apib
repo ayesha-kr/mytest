@@ -13,14 +13,24 @@ A book contains information about book
       ID of the desired book
 
 + Attributes (object, fixed-type)
+
     + book_pages : 100 (number)
-    + book_name  : worldwar (string)
+    + book_name  : worldwar2 (string)
     + book_shop : shop1 (string)
     + book_color : black (string)
+    
 ### Get a book [GET]
-
+Get book details by given id
 
 
 + Response 200 (application/json; charset=utf-8)
    + Attributes (book)
-~
+
+## books [/books]
+
++ Attributes (array[book])
+
+### List all books [GET]
+
++ Response 200 (application/json; charset=utf-8)
+  + Attributes (books)
