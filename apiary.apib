@@ -9,29 +9,29 @@ My new api
 
 ### Get All books [GET /books]
 
- + Response 200 (application/json)
+ + Response 200 (application/json; charset=utf-8)
    + Attributes (fixed-type)
-     - books (array[Book])
+     - books (array[Book], fixed-type)
 
 ### Get one books [GET /books/{id}]
 
  + Parameter
    + id : 1 (number) - ID of book
    
- + Response 200 (application/json)
+ + Response 200 (application/json; charset=utf-8)
    + Attributes (fixed-type)
      - Include Book 
-     - bookdetail (array[BookDetails])
-     - book_size 4343 (number)
+     - bookdetail (array[BookDetails], fixed-type)
+     - book_size: 4343 (number)
    
 
 # Data structure
 
-## Book (object)
+## Book (object, fixed)
 + book_pages : 200 (number)
 + book_name  : worldwar2 (string)
 + book_shop : shop1 (string)
 + book_color : black (string)
  
-## BookDetails (object)
+## BookDetails (object, fixed)
 + book_size : '43' (string)
