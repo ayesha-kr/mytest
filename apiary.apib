@@ -3,34 +3,35 @@ HOST: http://polls.apiblueprint.org/
 
 # mynewtestapi
 
-Polls is a simple API allowing consumers to view polls and vote in them.
+My new api
 
-## book [/books/{book_id}]
-A book contains information about book
+## Book collection [/books]
 
-+ Parameters
-   + book_id : 122 (number, required)
-      ID of the desired book
+### Get All books [GET /books]
 
-+ Attributes (object, fixed-type)
+ + Response 200 (application/json)
+   + Attributes (fixed-type)
+     - books (array[Book])
 
-    + book_pages : 100 (number)
-    + book_name  : worldwar2 (string)
-    + book_shop : shop1 (string)
-    + book_color : black (string)
-    
-### Get a book [GET]
-Get book details by given id
+### Get one books [GET /books/{id}]
 
+ + Parameter
+   + id : 1 (number) - ID of book
+   
+ + Response 200 (application/json)
+   + Attributes (fixed-type)
+     - Include Book 
+     - bookdetail (array[BookDetails])
+     - book_size 4343 (number)
+   
 
-+ Response 200 (application/json; charset=utf-8)
-   + Attributes (book)
+# Data structure
 
-## books [/books]
-
-+ Attributes (array[book], fixed-type)
-
-### List all books [GET]
-
-+ Response 200 (application/json; charset=utf-8)
-  + Attributes (books)
+## Book (object)
++ book_pages : 200 (number)
++ book_name  : worldwar2 (string)
++ book_shop : shop1 (string)
++ book_color : black (string)
+ 
+## BookDetails (object)
++ book_size : '43' (string)
