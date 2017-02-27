@@ -1,0 +1,111 @@
+---
+swagger: "2.0"
+info:
+  description: "This is a simple API"
+  version: "1.0.0"
+  title: "Simple Inventory API"
+  contact:
+    email: "you@your-company.com"
+  license:
+    name: "Apache 2.0"
+    url: "http://www.apache.org/licenses/LICENSE-2.0.html"
+host: "virtserver.swaggerhub.com"
+basePath: "/ayesha-kr/books/1.0.0"
+tags:
+- name: "admins"
+  description: "Secured Admin-only calls"
+- name: "developers"
+  description: "Operations available to regular developers"
+schemes:
+- "https"
+paths:
+  /book/{book_id}:
+    get:
+      tags:
+      - "developers"
+      summary: "searches inventory"
+      description: "By passing in the appropriate options, you can search for\navailable\
+        \ inventory in the system\n"
+      operationId: "searchInventory"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "book_id"
+        in: "path"
+        description: "id of book"
+        required: true
+        type: "integer"
+      - name: "type"
+        in: "query"
+        description: "pass a search string for looking up books"
+        required: true
+        type: "string"
+      responses:
+        200:
+          description: "search results matching criteria"
+          schema:
+            type: "array"
+            items:
+              $ref: "#/definitions/bookData"
+        400:
+          description: "bad input parameter"
+    put:
+      tags:
+      - "admins"
+      summary: "adds an inventory item"
+      description: "Adds an item to the system"
+      operationId: "addInventory"
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "book_id"
+        in: "path"
+        description: "id of book"
+        required: true
+        type: "string"
+      - in: "body"
+        name: "inventoryItem"
+        description: "Inventory item to add"
+        required: false
+        schema:
+          $ref: "#/definitions/bookData"
+      responses:
+        200:
+          description: "item created"
+        400:
+          description: "invalid input, object invalid"
+        409:
+          description: "an existing item already exists"
+definitions:
+  bookData:
+    type: "object"
+    required:
+    - "book_color"
+    - "book_detail"
+    - "book_name"
+    - "book_page"
+    - "book_shop"
+    properties:
+      book_name:
+        type: "string"
+        example: "worldwar2"
+      book_page:
+        type: "integer"
+        example: 200
+      book_shop:
+        type: "string"
+        example: "shop1"
+      book_color:
+        type: "string"
+        example: "black"
+      book_detail:
+        $ref: "#/definitions/book_detail"
+  book_detail:
+    required:
+    - "book_size"
+    properties:
+      book_size:
+        type: "string"
+        example: "400"
