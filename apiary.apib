@@ -13,18 +13,39 @@ My new api
    + Attributes (fixed-type)
      - books (array[Book], fixed-type)
 
-### Get one books [GET /books/{id}]
+### Get history books [GET /books/{id}?type='history']
 
- + Parameter
-   + id : 1 (number) - ID of book
-   
- + Response 200 (application/json; charset=utf-8)
-   + Attributes (fixed-type)
-     - Include Book 
-     - bookdetail (array[BookDetails], fixed-type)
-     - book_size: 4343 (number)
-   
+  + Parameter
+    + id : 1 (number) - ID of book
 
+  + Response 200 (application/json; charset=utf-8)
+     + Attributes (fixed-type)
+       - Include Book 
+       - bookdetail (array[BookDetails], fixed-type)
+       - book_size: 4343 (number)
+
+       
+### Get fiction books [GET /books/{id}?type='fiction']
+
+  + Parameter
+    + id : 1 (number) - ID of book
+
+  + Response 200 (application/json; charset=utf-8)
+     + Attributes (fixed-type)
+       - Include Book 
+       - bookdetail (array[BookDetails], fixed-type)
+       - book_lenght: 556 (number)
+
+  + Request
+    + Parameter
+      + id : 1 (number) - ID of book
+      + limit : 10
+    
+  + Response 200 (application/json; charset=utf-8)
+     + Attributes (fixed-type)
+       - Include Book 
+       - bookdetail (array[BookDetails], fixed-type)
+       - book_bla: 43 (number)
 # Data structure
 
 ## Book (object, fixed)
